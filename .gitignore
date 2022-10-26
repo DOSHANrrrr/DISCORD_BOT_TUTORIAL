@@ -1,0 +1,5 @@
+venv
+./venv
+config_copy.json
+guilds_data.json
+.idea
