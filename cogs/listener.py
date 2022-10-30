@@ -43,8 +43,8 @@ class Listener(commands.Cog):
         count_bots = 0
 
         for member in guild.members:
-            print(member.status)
-            if member.status is discord.Status.online:
+            print(member)
+            if member.status == discord.Status.offline:
                 count_members_is_online += 1
 
             if not member.bot:

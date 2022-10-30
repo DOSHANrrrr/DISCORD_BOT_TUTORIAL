@@ -1,0 +1,13 @@
+{
+  "guilds": [
+    {
+      "id": "1007229884797550652",
+      "channel_id_members": 1012290614924148757,
+      "suffix_members": "Members: ",
+      "channel_id_bots": 1012290646616318042,
+      "suffix_bots": "Bots: ",
+      "channel_id_members_online": 1035967161279184996,
+      "suffix_members_online": "Online: "
+    }
+  ]
+}
