@@ -5,7 +5,7 @@ import qrcode
 from discord.ext import commands
 import os
 
-file_for_config = open('config_copy.json', 'r')
+file_for_config = open('config.json', 'r')
 config = json.load(file_for_config)
 
 
