@@ -28,7 +28,7 @@ class Listener(commands.Cog):
         print('BOT ONLINE')
         if len(self.bot.guilds) > 0:
             for guild in self.bot.guilds:
-                print(guild)
+                # print(guild)
                 await self.update_member_bot_count_channel_name(guild)
 
     @staticmethod
@@ -44,7 +44,7 @@ class Listener(commands.Cog):
 
         for member in guild.members:
             print(member)
-            if member.status == discord.Status.offline:
+            if member.status == discord.Status.online:
                 count_members_is_online += 1
 
             if not member.bot:
@@ -52,10 +52,11 @@ class Listener(commands.Cog):
             else:
                 count_bots += 1
 
+        print(count_members, count_bots, count_members_is_online)
         return [count_members, count_bots, count_members_is_online]
 
-    @commands.command(name='update')
     async def update_member_bot_count_channel_name(self, guild):
+        print(1)
         member_count_channel_id, member_count_suffix = self.get_guild_member_count_channel_id(guild)
 
         bot_count_channel_id, bot_count_suffix = self.get_guild_bot_count_channel_id(guild)
@@ -63,6 +64,7 @@ class Listener(commands.Cog):
         member_online_channel_id, member_online_suffix = self.get_guild_members_online_count_channel_id(guild)
 
         members_count = Listener.get_guild_count(guild)
+        print(bot_count_suffix)
 
         if member_count_channel_id is not None and member_count_suffix is not None:
             member_count_channel = discord.utils.get(guild.channels, id=member_count_channel_id)

@@ -29,18 +29,18 @@ async def foo(ctx: commands.context, *, args):
 
 @bot.command(name='qr')
 async def make_qr_code(ctx, *, args):
-    file_name = str(args).replace(' ', '_')
+    data = str(args).replace(' ', '_')
 
-    img = qrcode.make(file_name + '.png')
+    img = qrcode.make(data)
 
     try:
-        img.save(file_name + '.png')
+        img.save(ctx.author.name + '.png')
     except Exception as e:
         print(e)
 
-    await ctx.send(file=discord.File(os.path.abspath(file_name + '.png')))
+    await ctx.send(file=discord.File(os.path.abspath(ctx.author.name + '.png')))
 
-    os.remove(os.path.abspath(file_name + '.png'))
+    os.remove(os.path.abspath(ctx.author.name + '.png'))
 
 
 async def load_cogs():
@@ -55,4 +55,3 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
-

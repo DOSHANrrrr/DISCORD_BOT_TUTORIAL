@@ -1,4 +1,5 @@
 venv
 ./venv
-config_copy.json
+config.json
 .idea
+__pycache__
