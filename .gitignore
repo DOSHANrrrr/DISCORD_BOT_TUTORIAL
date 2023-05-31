@@ -1,5 +1,8 @@
 venv
 ./venv
-config.json
+
 .idea
 __pycache__
+
+config.json
+guilds_data.json
