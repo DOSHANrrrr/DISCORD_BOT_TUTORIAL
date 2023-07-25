@@ -4,7 +4,7 @@ venv
 .idea
 __pycache__
 
-config.json
+./config.json
 guilds_data.json
-
+.config
 
