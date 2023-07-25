@@ -42,7 +42,6 @@ async def make_qr_code(ctx, *, args):
 
     os.remove(os.path.abspath(ctx.author.name + '.png'))
 
-
 async def load_cogs():
     for file in os.listdir('cogs'):
         if file.endswith('.py'):
